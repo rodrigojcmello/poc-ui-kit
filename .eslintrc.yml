@@ -1,0 +1,75 @@
+env:
+  node: true
+
+extends:
+  - airbnb-base
+  - plugin:prettier/recommended
+  - prettier
+
+plugins:
+  - prettier
+  - unicorn
+
+overrides:
+  - files:
+      - "**/*.ts"
+      - "**/*.tsx"
+
+    env:
+      browser: true
+      es2020: true
+
+    extends:
+      # JavaScript & React
+      - 'plugin:react/recommended'
+      - airbnb
+      - airbnb/hooks
+      - plugin:unicorn/recommended
+
+      # Jest-dom
+      - plugin:jest-dom/recommended
+
+      # TypeScript
+      - plugin:@typescript-eslint/eslint-recommended
+      - plugin:@typescript-eslint/recommended
+      - plugin:import/typescript
+
+      # Prettier
+      - plugin:prettier/recommended
+      - prettier
+      - prettier/react
+      - prettier/@typescript-eslint
+
+    parser: '@typescript-eslint/parser'
+
+    parserOptions:
+
+      # TypeScript
+      project: tsconfig.json
+
+      # React
+      ecmaFeatures:
+        jsx: true
+
+      # Modern JavaScript
+      ecmaVersion: 11
+      sourceType: module
+
+    plugins:
+      - react
+      - "@typescript-eslint"
+      - prettier
+      - unicorn
+      - only-error
+      - jest-dom
+
+    rules:
+
+      # Rules for TypeScript support
+
+      react/jsx-filename-extension:
+        - error
+        - extensions:
+            - ".tsx"
+
+      react/prop-types: off

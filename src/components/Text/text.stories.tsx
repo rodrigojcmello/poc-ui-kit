@@ -1,16 +1,14 @@
 import React from 'react';
-import { storiesOf } from "@storybook/react";
-import { withInfo } from "@storybook/addon-info";
+import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 // import { action } from "@storybook/addon-actions";
-import Button from "./index";
+import Text from '.';
 
-const stories = storiesOf("Components", module);
+const stories = storiesOf('Components', module);
 
 stories.add(
-    "Text kk",
-    withInfo({ inline: true })(() => (
-        <Button>Hello Button</Button>
-    )),
+  'Text kk',
+  withInfo({ inline: true })(() => <Text>Hello Button</Text>)
 );
 
 // export default { title: 'Button' };

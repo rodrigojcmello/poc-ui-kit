@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../components/**/*.stories.tsx'],
+  stories: ['../src/components/**/*.stories.tsx'],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.tsx?$/,
@@ -31,7 +31,7 @@ module.exports = {
         },
         'sass-loader',
       ],
-      include: path.resolve(__dirname, '../'),
+      include: path.resolve(__dirname, '../src'),
     });
     config.resolve.extensions.push('.ts', '.tsx');
     return config;

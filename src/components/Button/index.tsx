@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import sButton from './button.module.scss';
-import sMain from '../main.module.scss';
+import { css } from '../../util/style';
 
 interface ButtonProps {
   children: ReactNode;
@@ -15,7 +14,8 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({ children, type }) => {
   return (
     <button
-      className={[sButton.button, sMain.p4].join(' ')}
+      className={css(['p4', 'button'])}
+      // className={css(['button', 'p4'])}
       /* eslint-disable-next-line react/button-has-type */
       type={type || 'submit'}
     >

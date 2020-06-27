@@ -2,21 +2,19 @@
   "name": "poc-ui-kit",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/lib/index.js",
+  "main": "./build/lib/components/index.js",
   "scripts": {
     "storybook": "start-storybook",
     "prebuild": "rimraf build",
     "build": "tsc",
     "postbuild": "npm run copy-files",
-    "copy-files": "copyfiles -u 1 components/*.scss components/**/*.scss build/lib"
+    "copy-files": "copyfiles -u 1 ./src/style/**/*.scss ./src/style/**/**/*.scss build/lib"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.3",
-    "@storybook/addon-info": "^5.3.19",
-    "@storybook/react": "^5.3.19",
     "@types/react": "^16.9.41",
     "@types/storybook__addon-info": "^5.2.1",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
@@ -45,6 +43,8 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/react": "^5.3.19",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

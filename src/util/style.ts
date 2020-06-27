@@ -1,5 +1,4 @@
-export { default as Button } from './Button';
-export { default as Text } from './Text';
+import Style from '../style/main.module.scss';
 
 const themeColors = {
   itaucard: {
@@ -14,7 +13,7 @@ const themeColors = {
 
 type Theme = 'itaucard' | 'credicard';
 
-export function setTheme(theme: Theme, element: HTMLElement) {
+export function setTheme(theme: Theme, element: HTMLElement): void {
   element.style.setProperty(
     '--itau-color-primary',
     themeColors[theme].colorPrimary
@@ -23,4 +22,14 @@ export function setTheme(theme: Theme, element: HTMLElement) {
     '--itau-color-primary-contrast',
     themeColors[theme].colorPrimaryContrast
   );
+}
+
+type StylesType = (keyof typeof Style)[];
+
+export function css(styles: StylesType): string {
+  return styles
+    .map((name) => {
+      return Style[name];
+    })
+    .join(' ');
 }
